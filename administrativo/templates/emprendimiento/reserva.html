@@ -1,0 +1,52 @@
+{% extends "comun/base.html" %}
+{% block content %}
+
+
+
+<section class="contenedorReserva">
+  <div class="container">
+    <div class="reserva">
+      <div class="productoImage">
+        {% for producto in productos %}
+        <div class="contenedorImage">
+                <img class="imgproduct" src="/media/{{producto.foto}}">
+        </div>
+          {% endfor %}
+        
+      </div>
+  
+  
+      <div class="contenedorReservar">
+          <div class="reservaform">
+            <form class="formingreso" action="POST">
+
+              <div class="form">
+                {% csrf_token %}
+                {{ form.as_p }}
+              </div>
+              <div class="botonenviar">
+                <button class="enviar">
+                  <input  class="enviar" type="submit" value="Guardar Reserva">
+                </button>
+              </div>
+            </form>
+            <div class="botonvolver">
+              <button class="volver">
+                <a href="javascript:history.back(-1)">
+                  Regresar
+                </a>
+               </button>
+            </div>
+        </div>
+      </div>
+
+    </div>
+    
+
+
+  </div>
+
+</section>
+
+
+{%endblock%}

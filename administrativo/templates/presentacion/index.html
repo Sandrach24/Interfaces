@@ -1,0 +1,180 @@
+{% extends "comun/base.html" %}
+{% block content %}
+
+
+
+<section class="contenedorTodo">
+  <div class="container" >
+        <div class="menuOpciones">
+          <div class="contentHorizontal">
+            <div class="contenedor-logo">
+              <button class="logo" >
+                <div>
+                  <a href="/administrativo/index">
+                    <img  class="rutacafe" src="/media/mediapag/SanPedroLogo.jpg">   
+                  </a>
+                </div>
+              </button>
+            </div>
+            <div class="searchEmprendimientos">
+                  <div class="buscador">  
+                    <form method="get">
+                      <input class="caja-busqueda" id="search" type="text" placeholder="Search" aria-label="Search">
+                      <button class="icon" type="submit" > 
+                        <i class="fas fa-search"> </i>
+                      </button>  
+
+                    </form>       
+                  </div>
+            </div>
+            <div class="inicio">
+                <div class="idioma">
+                  <button class="bidioma"><i class="fas fa-language"></i></button>
+                </div> 
+                <div class="position_inicio">
+                  <div class="inicioSesion"> 
+                    <button class="Perfil">
+                      <span>Acceso</span>
+                      <i class="fas fa-user"></i>
+                      <ul class="dropmenu">
+                        <li class="active"><a href="/admin/">Admin Site</a></li>
+                        <li><a href="#"></a></li>
+                        
+                      </ul>
+                    </button>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div class="categorias">
+            <div class="categoriaslist">
+              {% for servicio in servicios  %}
+              <div class="contenedorcategorias">
+                <button class="btncategorias">
+                  <a href="/administrativo/emprendimientos/listado/{{ servicio.id }}">
+                  <img  class="imgc" src="/media/{{ servicio.foto }}" class="card-img-top"> 
+                    <h5 class="card-title">{{ servicio.nombreS }} </h5>
+                  </a>
+                  
+                </button>
+              </div>
+              {% endfor  %}
+            </div>
+          </div>   
+        </div>  
+  </div>
+</section>
+<section contenedorTodoText>
+  <div class="container">
+    <div class="About">
+      <br>
+      <h3 class="titulo">SAN PEDRO DE VILCABAMBA</h3>
+      <br>
+      <div class="AboutImg">
+        <section carrousel>
+          <input id="slide-0" name="carrousel" type="radio" checked/>
+          <div class="slide">
+            <label for="slide-3" class="back">◀</label>
+            <div class="slide-content">
+              <img  class="imgslide" src="/media/mediapag/sanpedro.jpg" alt="">
+            </div>
+            <label for="slide-1" class="forward">▶</label>
+          </div>
+          
+          <input id="slide-1" name="carrousel" type="radio" />
+          <div class="slide">
+            <label for="slide-0" class="back">◀</label>
+            <div class="slide-content">
+              <img  class="imgslide" src="/media/mediapag/sanpedro2.jpg" alt="">
+            </div>
+            <label for="slide-2" class="forward">▶</label>
+          </div>
+          
+          <input id="slide-2" name="carrousel" type="radio" />
+          <div class="slide">
+            <label for="slide-1" class="back">◀</label>
+            <div class="slide-content">
+              <img  class="imgslide" src="/media/mediapag/sanpedro3.jpg" alt="">
+            </div>
+     
+        </section>
+  
+      </div>
+      <div class="AboutText">
+        <div class="texto">
+          <div id="node-168" class="node node-page node-promoted clearfix" about="/contenido/san-pedro-de-vilcabamba" typeof="sioc:Item foaf:Document">
+
+  
+            <span property="dc:title" content="San Pedro de Vilcabamba" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+        
+        <div class="content">
+          <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><h2>Datos Generales y Geográficos</h2>
+      <p>&nbsp;</p>
+      <div align="justify">&nbsp;</div>
+      <div align="justify">La parroquialización de San Pedro de Vilcabamba se efectuó el 19 de Agosto de 1987, mediante Acuerdo Ministerial emitido en Quito el 5 de Agosto de 1987, por el Lcdo. Luis Roble Plaza, Ministro de Gobierno y&nbsp; de Municipalidades (Gobierno Constitucional del Ing. León Febres Cordero), y publicado en el Registro Oficial Nro. 752.<br>
+        &nbsp;</div>
+      <div align="justify">
+      <h3>Atractivos Turísticos</h3>
+      <br>
+
+      <img  class="imginformativa"src="/media/mediapag/sanpedro.jpg" alt="">
+      </div>
+      <div align="justify">Dentro de esta parroquia se encuentra la reserva El Bosque ubicada en la parte este, tiene un acceso que estima un espacio de tiempo de 2 horas y media a pie o caballo. Tiene gran interés como área natural por la riqueza en biodiversidad que posee y conserva ecosistemas similares al Parque Nacional Podocarpus, su extensión es de 3.000 has. Y se la utiliza para realizar estudios turísticos, al momento no esta abierta al turista y es manejada desde el año 1976 por la familia Hofman – Horton.</div>
+      <div align="justify">&nbsp;</div>
+      <div align="justify">&nbsp;</div>
+      <div align="justify">&nbsp;San Pedro de Vilcabamba es un pueblo que goza de un clima cálido subtropical, por encontrarse en la cordillera andina, su vegetación es de tipo bosque seco, aquí pasa una vía que conduce a Vilcabamba.
+      <p>	Le adornan hermosos lugares como es el majestuoso Mandango, que es un cerro maravilloso y muy visitado por los turistas, los mismos que al conocerlo se quedan maravillados; encontramos también la urna del Señor de la Caída que contiene una gran leyenda.</p></div>
+      <h3 align="justify">&nbsp;</h3>
+      <div>
+      <h3>Comidas y Bebidas Tradicionales</h3>
+      <br>
+      <ul><li> &nbsp; > Tamales&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+      <li>&nbsp; > Humitas</li>
+      <li>&nbsp; > Chibatos</li>
+      <li>&nbsp; > Bizcochuelos</li>
+      <li>&nbsp; > Arepas</li>
+      <li>&nbsp; > Mazapanes</li>
+      <li>&nbsp; > Batido de dulce con maní</li>
+      <li>&nbsp; > Repe</li>
+      <li>&nbsp; > Cecina</li>
+      <li>&nbsp; > Seco de chivo</li>
+      <li>&nbsp; > Caldo de gallina criolla</li>
+      <li>&nbsp; > Cuy hornado</li>
+      <li>&nbsp; > Chicha</li>
+      <li>&nbsp; > Guarapo</li>
+      <li>&nbsp; > Canelazos</li>
+      <li>&nbsp; > Aguado de leche</li>
+      </ul>
+      <br>
+      <h3>Fiestas Tradicionales</h3>
+      <ul>
+        <br>
+      <li>&nbsp;  > Fiestas de Carnaval</li>
+      <li>&nbsp;  > Fiestas de Corpus Christi, Junio</li>
+      <li> &nbsp; > Fiesta de San Pedro 29 de junio</li>
+      <li> &nbsp; > Fiesta de Santa Rosa, Barrio Cararango, 30 de Agosto</li>
+      <li>&nbsp;  > Fiesta en honor a la Virgen María, en el Chaupi, 8 de Septiembre</li>
+      <li>&nbsp;  > Fiesta de Parroquialización, primera semana de diciembre</li>
+      <li>&nbsp;  > Fiesta de Navidad en Sacapo, 25 de diciembre</li>
+      </ul>
+
+      <div align="justify">&nbsp;</div>
+      </div></div></div><span property="dc:title" content="San Pedro de Vilcabamba" class="rdf-meta element-hidden"></span>  </div>
+      
+        
+        
+      </div>
+
+        </div>
+    </div>
+  
+  
+  
+  </div>
+
+
+
+
+  </div>
+</section>
+{% endblock %}

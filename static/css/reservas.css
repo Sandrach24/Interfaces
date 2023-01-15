@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
+.contenedorReserva{
+    height: 100%;
+    width: 100%;
+}
+.reserva{
+    height: 500px;
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.productoImage{
+    height: 100%;
+    width: 50%;
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+}
+.contenedorImage{
+    height: 90%;
+    width: 70%;
+}
+.imgproduct{
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    border: 1px solid rgb(65, 65, 65);
+}
+.contenedorReservar{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reservaform{
+    width: 85%;
+    height: 20%;
+}
+.formingreso{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.botonenviar{
+    display: flex;
+    flex-wrap: nowrap;
+    gap:50px;
+}
+.volver, .volver a, .enviar{
+
+font-family: Roboto, sans-serif;
+font-weight: 0;
+font-size: 14px;
+color: #fff;
+background-color: #0066CC;
+padding: 8px 31px;
+border: solid #0066cc 1px;
+box-shadow: none;
+border-radius: 50px;
+transition : 1702ms;
+transform: translateY(0);
+display: flex;
+flex-direction: row;
+align-items: center;
+cursor: pointer;
+}
+
+.volver .a:hover{
+
+transition : 1702ms;
+padding: 10px 36px;
+transform : translateY(-0px);
+background-color: #fff;
+color: #0066cc;
+border: solid 1px #0066cc;
+}
+.botonvolver{
+    margin-top: 20px;
+}

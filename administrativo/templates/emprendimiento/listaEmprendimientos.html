@@ -1,0 +1,79 @@
+{% extends "comun/base.html" %}
+{% block content %}
+
+<section class="contenedorTodo">
+  <div class="container" >
+        <div class="menuOpciones">
+          <div class="contentHorizontal">
+            <div class="contenedor-logo">
+              <button class="logo" >
+                <div>
+                    <a href="/administrativo/index">
+                      <img  class="rutacafe"src="/media/mediapag/SanPedroLogo.jpg">   
+                    </a>
+                  </div>
+              </button>
+            </div>
+            <div class="searchEmprendimientos">
+                  <div class="buscador">
+                    <input class="caja-busqueda" id="search" type="search" placeholder="Search" aria-label="Search">
+                    <button class="icon"><i class="fas fa-search"></i></button>  
+                  </div>
+            </div>
+            <div class="inicio">
+                <div class="idioma">
+                  <button class="bidioma"><i class="fas fa-language"></i></button>
+                </div> 
+                <div class="position_inicio">
+                  <div class="inicioSesion"> 
+                    <button class="Perfil">
+                      <span>Acceso</span>
+                      <i class="fas fa-user"></i>
+                      <ul class="dropmenu">
+                        <li class="active"><a href="/admin/">Admin Site</a></li>
+                        <li><a href="#"></a></li>
+                        
+                      </ul>
+                    </button>
+                  </div>
+                </div>
+            </div>
+            
+          </div>
+          <div class="categorias"> 
+            <div class="categoriaslist">
+              {% for servicio in servicios  %}
+              <div class="contenedorcategorias">
+                <button class="btncategorias">
+                  <a href="/administrativo/emprendimientos/listado/{{ servicio.id }}">
+                  <img  class="imgc" src="/media/{{ servicio.foto }}" class="card-img-top"> 
+                    <h5 class="card-title">{{ servicio.nombreS }} </h5>
+                </button>
+              </div>
+              {% endfor  %}
+            </div>
+          </div>   
+        </div>
+        <div class="emprendimientos">
+            <div class="emprendimientolist">
+                {% for emprendimiento in emprendimientos  %}
+                <div class="contenedoremprendimientos">
+                    <button class="btnemprendimiento">
+                        <a href="/administrativo/emprendimientos/{{ emprendimiento.id }}/{{rating}}">
+                        <h5 class="card-title">{{ emprendimiento.nombreEmprendimiento }} </h5>
+                        <img src="/media/{{emprendimiento.foto}}" alt="" class="imge">
+                        <div class="cardtext">
+                            <p class="card-text">Direccion:{{ emprendimiento.direccion }} </p>
+                            <p class="card-text">Apertura:{{ emprendimiento.horaApertura }}</p>
+                            <p class="card-text">Cierre:{{ emprendimiento.horaCierre }} </p>
+                              
+
+              </div>
+              
+            
+              {% endfor %}
+                
+        </div>
+    </div>
+</section>
+{% endblock %}

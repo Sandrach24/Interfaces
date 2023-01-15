@@ -1,0 +1,137 @@
+{% extends "comun/base.html" %}
+{% block content %}
+<section class="contenedorTodo">
+  <div class="container" >
+        <div class="menuOpciones">
+          <div class="contentHorizontal">
+            <div class="contenedor-logo">
+              <button class="logo" >
+                <div>
+                  <a href="/administrativo/index">
+                    <img  class="rutacafe" src="/media/mediapag/SanPedroLogo.jpg">   
+                  </a>
+                </div>
+              </button>
+            </div>
+            <div class="searchEmprendimientos">
+                  <div class="buscador">
+                    <input class="caja-busqueda" id="search" type="search" placeholder="Search" aria-label="Search">
+                    <button class="icon"><i class="fas fa-search"></i></button>  
+                  </div>
+            </div>
+            <div class="inicio">
+                <div class="idioma">
+                  <button class="bidioma"><i class="fas fa-language"></i></button>
+                </div> 
+                <div class="position_inicio">
+                  <div class="inicioSesion"> 
+                    <button class="Perfil">
+                      <span>Acceso</span>
+                      <i class="fas fa-user"></i>
+                      <ul class="dropmenu">
+                        <li class="active"><a href="/admin/">Admin Site</a></li>
+                        <li><a href="#"></a></li>
+                      </ul>
+                    </button>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div class="volveremprendimientos">
+            <div class="botonvolveremprendimientos">
+              <button class="volver">
+                <a href="javascript:history.back(-1)">
+                  Regresar
+                </a>
+               </button>
+            </div>
+          </div> 
+        </div>  
+  </div>
+</section>
+
+<section class="contenedorTodo"> 
+    {% for emprende  in emprendimientos  %}
+        <div class="container">
+          <div class="nombreEmprendimiento">
+            <div class="cajonNombre">
+              <div class="nombrecaja">
+                <h1 class="nombre">&nbsp;{{emprende.nombreEmprendimiento}}</h1>
+              </div>
+            </div>
+              <div class="profile">
+                <div class="content">
+                  <div class="btn"><span></span></div>
+                </div>
+                <div class="box">
+                  <i>
+                  <a href="{{emprende.facebook}}" class="fa fa-facebook"></a>
+                  </i>
+                  <i>
+                    <a href="{{emprende.instagram}}" class="fa fa-instagram"></a>
+
+                  </i>
+                </div>
+              </div>
+              <!-- partial -->
+                <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script><script  src="/static/js/script.js"></script>
+              
+          </div>
+          <div class="multimedia">
+            <div class="video">
+              <iframe class="videoi"width="560" height="315" src="{{ emprende.video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="descripcionEmprendimiento">
+              <div class="clasetextdes">
+                <p class="descripciontext">
+                  {{emprende.descripcion}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="infoEmprendimiento">
+            <div class="contenedorEmprendimiento">
+              <div class="datosEmprendimiento">
+                <div class="descripcionemprendimientos">
+                  <div class="emprendimientotxt">
+                    <p class="descripciontext">Direccion:{{ emprende.direccion}}</p>
+                    <p class="descripciontext">Contacto 1:{{emprende.telCelular}}</p>
+                    <p class="descripciontext">Hora de Apertura:{{ emprende.horaApertura}}</p>
+                    <p class="descripciontext">Hora de Cierre:{{emprende.horCierre}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+              <div class="Datostodos">
+                <div class="imagenemprendimiento">
+                  <img src="/media/{{emprende.foto}}" alt="" class="imge">
+                </div>
+              </div>
+          </div>
+          <div class="reservas"> 
+            <div class="productolist">
+              {%for producto in productos%}
+              <div class="cardproducto">
+                <div class="imgproducto">
+                  <img  class="imgproductocont"src="/media/{{producto.foto}}" >
+                </div>
+                <div class="infoproducto">
+                  <div class="textproducto">
+                    <p class="titlecard">{{producto.nombreP}}</p>
+                    <br>
+                    <p>Precio: {{producto.precio }}</p>
+                  </div>
+                  <div class="reservacionconbut">
+                    <button class="reservacion">
+                      <a href="/administrativo/emprendimientos/reserva/{{producto.id}}">Reservacion</a>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              {%endfor%}
+            </div>
+          </div>
+        </div>
+</section>
+{% endfor %}
+{%endblock%}
